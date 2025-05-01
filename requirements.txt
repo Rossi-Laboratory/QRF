@@ -1,0 +1,6 @@
+pennylane
+pennylane-borealis
+matplotlib
+torch
+omegaconf
+hydra-core
