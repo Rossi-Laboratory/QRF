@@ -12,15 +12,40 @@
   <script src="https://udify.app/embed.min.js" id="vFiKdrj60ZNurQsL" defer></script>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 2em;
-      line-height: 1.6;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 2rem auto;
+      max-width: 1000px;
+      padding: 0 1.5rem;
+      line-height: 1.8;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
     }
     img {
-      margin-bottom: 1em;
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 1rem 0;
     }
     iframe {
-      margin-bottom: 2em;
+      width: 100%;
+      border: none;
+      margin: 2rem 0;
+      border-radius: 8px;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    p {
+      margin-bottom: 1rem;
     }
   </style>
 </head>
@@ -29,54 +54,55 @@
   <p>
     <a href="https://arxiv.org/abs/2211.03418">Paper</a> |
     <a href="https://yfyangd.github.io/QRF/">Project Page</a> |
-    <a href="#">Vedio</a> |
+    <a href="#">Video</a> |
     <a href="#">Code</a>
   </p>
-  <p>Feel free to use the <strong>chatbot</strong> at the bottom right of the webpage to inquire about any details you'd like to know regarding this work.</p>
+  <p><strong>Use the chatbot at the bottom right to explore the QRF system and ask any questions!</strong></p>
 
   <h2>NeRF vs QRF</h2>
   <ul>
-    <li>NeRF: given a 3D position (x, y, z), viewing direction (θ, ϕ), NeRF produces static and transient colors (r, g, b) and transparency values (σ).</li>
-    <li>QRF: architecture replaces the same task with encoding circuit, parameterized quantum circuits, and quantum activation.</li>
+    <li>NeRF: Given a 3D position (x, y, z) and viewing direction (θ, ϕ), outputs RGB color (r, g, b) and transparency (σ).</li>
+    <li>QRF: Replaces this with quantum encoding circuits, parameterized quantum circuits, and quantum activations.</li>
   </ul>
-  <img src="./image/method.png" width="50%" alt="QRF Method Diagram" />
+  <img src="./image/method.png" alt="QRF Method Diagram" />
 
   <h2>QRF Architecture</h2>
-  <p>Quantum Radiance Fields (QRF) with encoding circuits and quantum circuits produces colors (r, g, b) and transparency values (σ) given a 3D position (x, y, z) and viewing direction (θ, ϕ). Similar to the NeRF architecture, QRF enforces that the predicted σ is independent of view direction.</p>
-  <img src="./image/architecture.png" width="50%" alt="QRF Architecture" />
+  <p>The QRF system maps input position and viewing direction to RGB and σ using quantum components. It enforces opacity σ to be view-independent.</p>
+  <img src="./image/architecture.png" alt="QRF Architecture" />
 
   <h2>Optimization</h2>
-  <p>We supervise our QRF model by gradient descent using a simple L2 loss, and use Adam optimizer with a learning rate α = 0.001 to keep track of gradient moments over time to redirect the optimization trajectory.</p>
-  <img src="./image/o.png" width="50%" alt="Optimization" />
+  <p>QRF is trained via gradient descent using L2 loss and the Adam optimizer with learning rate α = 0.001.</p>
+  <img src="./image/o.png" alt="Optimization Diagram" />
 
   <h2>Comparison</h2>
-  <p>Volume rendering of Chair, Ship, and Hotdog with training 100k iterations. Compared with NeRF, QRF has faster convergence, higher rendering efficiency, and higher rendering quality under the quantum integration.</p>
-  <iframe frameborder="0" class="juxtapose" width="20%" height="466" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=b4696cc8-5dc9-11ed-b5bd-6595d9b17862"></iframe>
-  <iframe frameborder="0" class="juxtapose" width="30%" height="330" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=b9f6451c-5dc9-11ed-b5bd-6595d9b17862"></iframe>
-  <iframe frameborder="0" class="juxtapose" width="30%" height="330" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=a2403828-5dc5-11ed-b5bd-6595d9b17862"></iframe>
+  <p>Rendering comparison of Chair, Ship, and Hotdog after 100k training iterations. QRF shows faster convergence and better quality.</p>
+  <iframe class="juxtapose" height="466" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=b4696cc8-5dc9-11ed-b5bd-6595d9b17862"></iframe>
+  <iframe class="juxtapose" height="330" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=b9f6451c-5dc9-11ed-b5bd-6595d9b17862"></iframe>
+  <iframe class="juxtapose" height="330" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=a2403828-5dc5-11ed-b5bd-6595d9b17862"></iframe>
 
   <h2>Results on Real-World Captured Data</h2>
-  <p>Camera position from <a href="https://colmap.github.io/">COLMAP</a></p>
+  <p>Camera positions reconstructed with <a href="https://colmap.github.io/">COLMAP</a>.</p>
 
   <h3>Pine Tree in Front of My Home</h3>
   <p>Training: 4k iterations</p>
-  <img src="https://i.imgur.com/HkGkfzv.gif" width="30%" alt="NeRF" />
-  <img src="https://i.imgur.com/FuD2TeF.gif" width="30%" alt="QRF" />
+  <img src="https://i.imgur.com/HkGkfzv.gif" alt="NeRF Pine Tree" />
+  <img src="https://i.imgur.com/FuD2TeF.gif" alt="QRF Pine Tree" />
 
   <h3>Succulent Plan Potted</h3>
   <p>Training: 4k iterations with 16 samples.</p>
-  <img src="https://i.imgur.com/iM4Fwts.gif" width="30%" alt="Succulent NeRF" />
+  <img src="https://i.imgur.com/iM4Fwts.gif" alt="Succulent NeRF" />
   <p>3D mesh result with 64 samples:</p>
-  <iframe title="Succulent_Plan_Potted" width="640" height="480" src="https://sketchfab.com/models/ea0fe389e1694d4a9f797700184ba3ed/embed"></iframe>
+  <iframe title="Succulent_Plan_Potted" height="480" src="https://sketchfab.com/models/ea0fe389e1694d4a9f797700184ba3ed/embed"></iframe>
 
   <h3>Bench Park</h3>
   <p>Training: 120k iterations with 64 samples.</p>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/fJPNj3in8S4" frameborder="0" allowfullscreen></iframe>
+  <iframe height="315" src="https://www.youtube.com/embed/fJPNj3in8S4" allowfullscreen></iframe>
   <p>3D mesh result with 64 samples:</p>
-  <iframe title="Bench at Park" width="640" height="480" src="https://sketchfab.com/models/e5f82af824bd4541ad1ab612b9da7b12/embed"></iframe>
+  <iframe title="Bench at Park" height="480" src="https://sketchfab.com/models/e5f82af824bd4541ad1ab612b9da7b12/embed"></iframe>
 
   <h3>Eluanbi Lighthouse</h3>
-  <img src="./image/Hank.jpg" width="20%" alt="Eluanbi Lighthouse" />
-  <iframe title="Eluanbi Lighthouse Model" width="640" height="480" src="https://sketchfab.com/models/ee6b562cd45a4edd80741ca678cd2581/embed"></iframe>
+  <img src="./image/Hank.jpg" width="40%" alt="Eluanbi Lighthouse" />
+  <iframe title="Eluanbi Lighthouse Model" height="480" src="https://sketchfab.com/models/ee6b562cd45a4edd80741ca678cd2581/embed"></iframe>
 </body>
 </html>
+
