@@ -180,21 +180,25 @@
     </section>
 
     <section>
-      <h2>Comparison</h2>
-      <p>Rendering comparison of Chair, Ship, and Hotdog after 100k training iterations. QRF shows faster convergence and better quality.</p>
-      <iframe class="juxtapose" height="466" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=b4696cc8-5dc9-11ed-b5bd-6595d9b17862"></iframe>
-      <iframe class="juxtapose" height="330" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=b9f6451c-5dc9-11ed-b5bd-6595d9b17862"></iframe>
-      <iframe class="juxtapose" height="330" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=a2403828-5dc5-11ed-b5bd-6595d9b17862"></iframe>
-    </section>
+  <h2>Comparison</h2>
+  <p>Rendering comparison of Chair, Ship, and Hotdog after 100k training iterations. QRF shows faster convergence and better quality.</p>
+  <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between;">
+    <iframe class="juxtapose" width="32%" height="250" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=b4696cc8-5dc9-11ed-b5bd-6595d9b17862"></iframe>
+    <iframe class="juxtapose" width="32%" height="250" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=b9f6451c-5dc9-11ed-b5bd-6595d9b17862"></iframe>
+    <iframe class="juxtapose" width="32%" height="250" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=a2403828-5dc5-11ed-b5bd-6595d9b17862"></iframe>
+  </div>
+</section>
 
     <section>
       <h2>Real-World Results</h2>
       <p>Camera positions reconstructed with <a href="https://colmap.github.io/">COLMAP</a>.</p>
 
       <h3>Pine Tree in Front of My Home</h3>
-      <p>Training: 4k iterations</p>
-      <img src="https://i.imgur.com/HkGkfzv.gif" alt="NeRF Pine Tree" />
-      <img src="https://i.imgur.com/FuD2TeF.gif" alt="QRF Pine Tree" />
+<p>Training: 4k iterations</p>
+<div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between;">
+  <img src="https://i.imgur.com/HkGkfzv.gif" alt="NeRF Pine Tree" style="width: 48%; height: auto;" />
+  <img src="https://i.imgur.com/FuD2TeF.gif" alt="QRF Pine Tree" style="width: 48%; height: auto;" />
+</div>
 
       <h3>Succulent Plan Potted</h3>
       <p>Training: 4k iterations with 16 samples.</p>
