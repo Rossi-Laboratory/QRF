@@ -1,0 +1,9 @@
+task: 2d
+n_qubits: 6
+circuit: circuit_a
+encoding: dense_angle
+epochs: 50
+lr: 0.05
+batch_size: 64
+n_samples: 8
+save_interval: 10
