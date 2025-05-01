@@ -1,4 +1,5 @@
 # Quantum Radiance Fields (QRF)
+[Paper](https://arxiv.org/abs/2211.03418) | [Project Page](https://rossi-laboratory.github.io/QRF/) | [Vedio]() | [Code](https://github.com/Rossi-Laboratory/QRF/)
 
 A fully quantum-native framework for photorealistic neural rendering, using PennyLane and the Borealis quantum backend.
 
