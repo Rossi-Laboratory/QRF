@@ -122,7 +122,60 @@
     </div>
   </header>
   <main>
-    <!-- content remains unchanged -->
+    <section>
+      <h2>NeRF vs QRF</h2>
+      <ul>
+        <li>NeRF: Given a 3D position (x, y, z) and viewing direction (θ, ϕ), outputs RGB color (r, g, b) and transparency (σ).</li>
+        <li>QRF: Replaces this with quantum encoding circuits, parameterized quantum circuits, and quantum activations.</li>
+      </ul>
+      <img src="./image/method.png" alt="QRF Method Diagram" />
+    </section>
+
+    <section>
+      <h2>QRF Architecture</h2>
+      <p>The QRF system maps input position and viewing direction to RGB and σ using quantum components. It enforces opacity σ to be view-independent.</p>
+      <img src="./image/architecture.png" alt="QRF Architecture" />
+    </section>
+
+    <section>
+      <h2>Optimization</h2>
+      <p>QRF is trained via gradient descent using L2 loss and the Adam optimizer with learning rate α = 0.001.</p>
+      <img src="./image/o.png" alt="Optimization Diagram" />
+    </section>
+
+    <section>
+      <h2>Comparison</h2>
+      <p>Rendering comparison of Chair, Ship, and Hotdog after 100k training iterations. QRF shows faster convergence and better quality.</p>
+      <iframe class="juxtapose" height="466" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=b4696cc8-5dc9-11ed-b5bd-6595d9b17862"></iframe>
+      <iframe class="juxtapose" height="330" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=b9f6451c-5dc9-11ed-b5bd-6595d9b17862"></iframe>
+      <iframe class="juxtapose" height="330" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=a2403828-5dc5-11ed-b5bd-6595d9b17862"></iframe>
+    </section>
+
+    <section>
+      <h2>Real-World Results</h2>
+      <p>Camera positions reconstructed with <a href="https://colmap.github.io/">COLMAP</a>.</p>
+
+      <h3>Pine Tree in Front of My Home</h3>
+      <p>Training: 4k iterations</p>
+      <img src="https://i.imgur.com/HkGkfzv.gif" alt="NeRF Pine Tree" />
+      <img src="https://i.imgur.com/FuD2TeF.gif" alt="QRF Pine Tree" />
+
+      <h3>Succulent Plan Potted</h3>
+      <p>Training: 4k iterations with 16 samples.</p>
+      <img src="https://i.imgur.com/iM4Fwts.gif" alt="Succulent NeRF" />
+      <p>3D mesh result with 64 samples:</p>
+      <iframe title="Succulent_Plan_Potted" height="480" src="https://sketchfab.com/models/ea0fe389e1694d4a9f797700184ba3ed/embed"></iframe>
+
+      <h3>Bench Park</h3>
+      <p>Training: 120k iterations with 64 samples.</p>
+      <iframe height="315" src="https://www.youtube.com/embed/fJPNj3in8S4" allowfullscreen></iframe>
+      <p>3D mesh result with 64 samples:</p>
+      <iframe title="Bench at Park" height="480" src="https://sketchfab.com/models/e5f82af824bd4541ad1ab612b9da7b12/embed"></iframe>
+
+      <h3>Eluanbi Lighthouse</h3>
+      <img src="./image/Hank.jpg" width="40%" alt="Eluanbi Lighthouse" />
+      <iframe title="Eluanbi Lighthouse Model" height="480" src="https://sketchfab.com/models/ee6b562cd45a4edd80741ca678cd2581/embed"></iframe>
+    </section>
   </main>
   <button id="topBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑ Top</button>
 
